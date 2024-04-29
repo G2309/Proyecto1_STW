@@ -12,7 +12,6 @@
     "run-container": "docker run --name vite_postgresdb -p 5434:5432 -e POSTGRES_HOST_AUTH_METHOD=trust blog_postgres"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "pg": "^8.11.5",

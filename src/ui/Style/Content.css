@@ -1,0 +1,21 @@
+.content {
+	background-color:red;
+	width: 70%;
+	height: 80vh;
+}
+
+.content.expanded {
+	width: 100%;
+}
+
+.content-hidder {
+
+}
+
+.content-hidder.visible{
+	display:none;
+}
+
+.content-hidder.hidden{
+	display:none;
+}
