@@ -2,6 +2,8 @@
 	background-color:red;
 	width: 70%;
 	height: 80vh;
+	display: flex;
+	flex-direction:column;
 }
 
 .content.expanded {
@@ -18,4 +20,38 @@
 
 .content-hidder.hidden{
 	display:none;
+}
+
+.header {
+	height: 20vh;
+	font-size:3.5em;
+	font-weight:bold;
+	text-align:center;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.date {
+	height:5vh;
+	font-size:1.2em;
+	font-weight:italic;
+	margin-left:auto;
+	padding:5px;
+}
+
+.level {
+	height:2vh;
+	font-size:1.2em;
+	font-weight:bold;
+	margin-right:auto;
+	padding:15px;
+}
+
+.content_post {
+	height:40vh;
+	display:flex;
+	text-align:justify;
+	padding:10px;
+	font-size:1.0em;
 }

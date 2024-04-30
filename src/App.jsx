@@ -12,7 +12,7 @@ function App() {
 			<TopBar postId={postId}/>
 			<div className='blog'>
 			<SideBar postId={postId} setPostId={setPostId}/>
-			<Content/>
+			<Content postId={postId}/>
 			</div>
 		</div>
 	)

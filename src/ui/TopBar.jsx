@@ -15,7 +15,18 @@ const TopBar = ({postId}) => {
 
 	return (
 		<div className='topbar'>
-			<h2>{postTitle}</h2>
+		  <div className='login'>
+
+		  </div>	
+		  
+		  <div className='title'>
+		    <h2>{postTitle}</h2>
+		  </div>
+
+		  <div className='crud'>
+		  
+		  </div>
+
 		</div>
 	)
 }
