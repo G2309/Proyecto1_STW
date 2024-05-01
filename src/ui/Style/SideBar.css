@@ -42,10 +42,15 @@
 }
 
 .post-item {
-	margin-bottom:10px;
 	cursor:pointer;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	margin-bottom:10px;
 }
 
 .post-item:hover {
 	background-color:gray;
+	border-radius:10px;
 }

@@ -1,0 +1,14 @@
+.app {
+	display:flex;
+	flex-direction: column;
+	height:100%;
+	width:100%;
+}
+
+.blog {
+	display:flex;
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
