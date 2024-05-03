@@ -34,3 +34,14 @@
 	padding-left:20px;
 	padding-right:30px;
 }
+
+.button-log {
+	border:none;
+	border-radius:5px;
+	cursor:pointer;
+	padding:5px;
+}
+
+.button-log:hover {
+	background-color:grey;
+}

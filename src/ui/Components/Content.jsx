@@ -1,5 +1,5 @@
-import './Style/Content.css'
-import useApi from '../api/useApi'
+import '../Style/Content.css'
+import useApi from '../useApi'
 import {useState,useEffect} from 'react'
 
 const Content = ({isVisible, postId}) => {

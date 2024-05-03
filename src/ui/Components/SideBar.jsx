@@ -1,7 +1,7 @@
-import './Style/SideBar.css'
-import './Style/Content.css'
+import '../Style/SideBar.css'
+import '../Style/Content.css'
 import React, {Suspense, useState} from 'react'
-import useApi from '../api/useApi'
+import useApi from '../useApi'
 import Content from './Content'
 import TopBar from './TopBar'
 

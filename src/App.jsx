@@ -1,4 +1,4 @@
-import Router from './api/Router'
+import Router from './Router'
 
 function App() {
 	return (

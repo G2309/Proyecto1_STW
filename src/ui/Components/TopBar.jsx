@@ -1,10 +1,21 @@
-import './Style/TopBar.css'
-import useApi from '../api/useApi'
+import '../Style/TopBar.css'
+import useApi from '../useApi'
 import {useState,useEffect} from 'react'
 
-const TopBar = ({postId}) => {
+const TopBar = ({postId,navigate}) => {
 	const [postTitle, setPostTitle] = useState('')
 	const {data: post,isLoading,error} = useApi(`http://localhost:8000/api/blogs/${postId}`)
+	const [isLogged, setIsLogged] = useState(false)
+
+	const handleLogin = () => {
+		setIsLogged(true)
+		navigate('/login')
+	}
+
+	const handleLogout = () => {
+		setIsLogged(false)
+		navigate('/')
+	}
 
 	useEffect(()  => { 
 		if(post) {
@@ -16,7 +27,11 @@ const TopBar = ({postId}) => {
 	return (
 		<div className='topbar'>
 		  <div className='login'>
-
+		    {isLogged ? (
+			<button className='button-log' onClick={handleLogout}>Logout</button>
+		    ) : (
+		    	<button className='button-log' onClick={handleLogin}>Login</button>
+		    )}
 		  </div>	
 		  
 		  <div className='title'>

@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
-import Home from '../ui/Home'
-//import Login from '../ui/Login'
+import Home from './ui/Screens/Home'
+import Login from './ui/Screens/Login'
 
 const Router = () => {
 	const [ruta, setRuta] = useState(window.location.pathname)
@@ -14,8 +14,8 @@ const Router = () => {
 		switch(ruta) {
 			case '/home':
 				return <Home navigate={navigate} />
-		//	case '/login':
-		//		return <Login navigate={navigate}/>
+			case '/login':
+				return <Login navigate={navigate}/>
 		}
 	}
 
