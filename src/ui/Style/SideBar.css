@@ -1,8 +1,12 @@
 .sidebar {
-	background-color: lightgreen;
+	background-color:#313b45;
 	height: 80vh;
 	display:flex;
 	width: 30%;
+}
+
+.white {
+  color: white;
 }
 
 .sidebar.hidden {
@@ -35,6 +39,7 @@
 	font-weight:bold;
 	font-size:3.5em;
 	padding:15px;
+	color:white;
 }
 
 .right-sidebar:hover {
@@ -48,6 +53,7 @@
 	justify-content:center;
 	flex-direction:column;
 	margin-bottom:10px;
+	color:white;
 }
 
 .post-item:hover {

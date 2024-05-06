@@ -1,11 +1,10 @@
 .content {
-	background-color:red;
+	background-color:#516482;
 	width: 70%;
 	height: 80vh;
 	display: flex;
 	flex-direction:column;
 }
-
 .content.expanded {
 	width: 100%;
 }
@@ -24,6 +23,7 @@
 
 .header {
 	height: 20vh;
+	color:white;
 	font-size:3.5em;
 	font-weight:bold;
 	text-align:center;
@@ -38,9 +38,11 @@
 	font-weight:italic;
 	margin-left:auto;
 	padding:5px;
+	color:white;
 }
 
 .level {
+	color:white;
 	height:2vh;
 	font-size:1.2em;
 	font-weight:bold;
@@ -54,4 +56,5 @@
 	text-align:justify;
 	padding:10px;
 	font-size:1.0em;
+	color:white;
 }

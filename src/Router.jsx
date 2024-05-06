@@ -15,7 +15,7 @@ const Router = () => {
 			case '/home':
 				return <Home navigate={navigate} />
 			case '/login':
-				return <Login navigate={navigate}/>
+				return <Login navigate={navigate} />
 		}
 	}
 

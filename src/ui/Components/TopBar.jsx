@@ -2,20 +2,27 @@ import '../Style/TopBar.css'
 import useApi from '../useApi'
 import {useState,useEffect} from 'react'
 
-const TopBar = ({postId,navigate}) => {
+const TopBar = ({navigate, postId}) => {
 	const [postTitle, setPostTitle] = useState('')
 	const {data: post,isLoading,error} = useApi(`http://localhost:8000/api/blogs/${postId}`)
 	const [isLogged, setIsLogged] = useState(false)
-
+	
 	const handleLogin = () => {
-		setIsLogged(true)
 		navigate('/login')
 	}
 
 	const handleLogout = () => {
+		localStorage.removeItem('isLoggedIn')
 		setIsLogged(false)
-		navigate('/')
+		navigate('/home')
 	}
+
+	useEffect(() => {
+		const loggedIn = localStorage.getItem('isLoggedIn')
+		if(loggedIn === 'true'){
+			setIsLogged(true)
+		}
+	}, [])
 
 	useEffect(()  => { 
 		if(post) {
@@ -35,12 +42,16 @@ const TopBar = ({postId,navigate}) => {
 		  </div>	
 		  
 		  <div className='title'>
-		    <h2>{postTitle}</h2>
+		    <h2 className='white'>{postTitle}</h2>
 		  </div>
 
-		  <div className='crud'>
-		  
-		  </div>
+		  {isLogged && (
+                	<div className='crud'>
+                   	 <button className='button-crud'>Edit</button>
+                   	 <button className='button-crud'>Delete</button>
+                  	  <button className='button-crud'>Create</button>
+              	  </div>
+           	 )}
 
 		</div>
 	)
