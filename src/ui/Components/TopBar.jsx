@@ -31,7 +31,7 @@ const TopBar = ({navigate, postId}) => {
 
 	const fetchPost = async () => {
 		try {
-			const response = await fetch(,`https://backend-stw-p1.onrender.com/api/blogs/${postId}` {
+			const response = await fetch(`https://backend-stw-p1.onrender.com/api/blogs/${postId}`, {
 				method: 'DELETE',
 			})
 			if (!response.ok){
