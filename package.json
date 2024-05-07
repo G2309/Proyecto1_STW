@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build-image": "docker build -t blog_postgres .",
-    "run-container": "docker run --name vite_postgresdb -p 5434:5432 -e POSTGRES_HOST_AUTH_METHOD=trust blog_postgres",
+    "run-container": "docker run --name vite_postgresdb -p 5434:5432 -e POSTGRES_USER=blog_user -e POSTGRES_PASSWORD=blog123 blog_postgres",
     "api":"node src/api/conn.cjs"
   },
   "dependencies": {

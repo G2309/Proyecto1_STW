@@ -1,5 +1,7 @@
 CREATE DATABASE blogs_database;
 
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO blog_user;
+
 \c blogs_database;
 
 CREATE TABLE IF NOT EXISTS blog(
