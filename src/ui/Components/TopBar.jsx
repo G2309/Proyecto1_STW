@@ -6,8 +6,11 @@ const TopBar = ({navigate, postId}) => {
 	const [postTitle, setPostTitle] = useState('')
 	const {data: post,isLoading,error} = useApi(`http://localhost:8000/api/blogs/${postId}`)
 	const [isLogged, setIsLogged] = useState(false)
+	const [isEditing, setIsEditing] = useState(false)
+	const [isCreating, setIsCreating] = useState(false)
 	
 	const handleLogin = () => {
+		setIsLogged(true)
 		navigate('/login')
 	}
 
@@ -15,6 +18,28 @@ const TopBar = ({navigate, postId}) => {
 		localStorage.removeItem('isLoggedIn')
 		setIsLogged(false)
 		navigate('/home')
+	}
+
+	const handleDelete = async () => {
+		try{
+			await fetchPost()
+			window.location.reload()
+		} catch (error) {
+			console.error('Error al borrar blog: ',error.message)
+		}
+	}
+
+	const fetchPost = async () => {
+		try {
+			const response = await fetch(`http://localhost:8000/api/blogs/${postId}`, {
+				method: 'DELETE',
+			})
+			if (!response.ok){
+				throw new Error('Failed to delete blog')
+			}
+		} catch (error) {
+			throw new Error('Error al borrar: ${error.message}')
+		}
 	}
 
 	useEffect(() => {
@@ -29,6 +54,16 @@ const TopBar = ({navigate, postId}) => {
 			setPostTitle(post.title)
 		}
 	}, [post])
+    	
+	const handleEdit = () => {
+        	setIsEditing(true)
+		navigate('/edit')
+    	}
+
+   	const handleCreate = () => {
+        	setIsCreating(true)
+		navigate('/create')
+    	}
 
 
 	return (
@@ -47,9 +82,9 @@ const TopBar = ({navigate, postId}) => {
 
 		  {isLogged && (
                 	<div className='crud'>
-                   	 <button className='button-crud'>Edit</button>
-                   	 <button className='button-crud'>Delete</button>
-                  	  <button className='button-crud'>Create</button>
+                   	 <button className='button-crud' onClick={handleEdit}>Edit</button>
+                   	 <button className='button-crud' onClick={handleDelete}>Delete</button>
+                  	  <button className='button-crud' onClick={handleCreate}>Create</button>
               	  </div>
            	 )}
 

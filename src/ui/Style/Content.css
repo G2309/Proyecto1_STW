@@ -4,6 +4,7 @@
 	height: 80vh;
 	display: flex;
 	flex-direction:column;
+	color:white;
 }
 .content.expanded {
 	width: 100%;
