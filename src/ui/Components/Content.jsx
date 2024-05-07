@@ -7,7 +7,7 @@ const Content = ({ isVisible, postId, isLogged }) => {
     const [postContent, setPostContent] = useState('');
     const [postLevel, setPostLevel] = useState(null);
     const [postDate, setPostDate] = useState(null);
-    const {data: post, isLoading, error} = useApi(`http://localhost:8000/api/blogs/${postId}`)
+    const {data: post, isLoading, error} = useApi(`https://backend-stw-p1.onrender.com/api/blogs/${postId}`)
 
     useEffect(() => {
         if (post) {

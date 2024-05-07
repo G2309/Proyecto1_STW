@@ -7,7 +7,7 @@ import TopBar from './TopBar'
 
 const SideBar = ({postId,setPostId}) => {
 	const [isVisible, setIsVisible] = useState(true)
-	const {data,isLoading,error} = useApi('http://localhost:8000/api/blogs');
+	const {data,isLoading,error} = useApi('https://backend-stw-p1.onrender.com/api/blogs');
 
 	if (error) {
 		return <div>Error: {error.message}</div>

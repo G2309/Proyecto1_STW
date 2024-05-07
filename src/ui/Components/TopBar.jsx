@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 
 const TopBar = ({navigate, postId}) => {
 	const [postTitle, setPostTitle] = useState('')
-	const {data: post,isLoading,error} = useApi(`http://localhost:8000/api/blogs/${postId}`)
+	const {data: post,isLoading,error} = useApi(`https://backend-stw-p1.onrender.com/api/blogs/${postId}`)
 	const [isLogged, setIsLogged] = useState(false)
 	const [isEditing, setIsEditing] = useState(false)
 	const [isCreating, setIsCreating] = useState(false)

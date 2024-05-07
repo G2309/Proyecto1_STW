@@ -4,12 +4,12 @@ import useApi from '../useApi';
 import useForm from '../useForm'; 
 
 const Create = ({ navigate }) => {
-  const { isLoading, error } = useApi('http://localhost:8000/api/blogs'); 
+  const { isLoading, error } = useApi('https://backend-stw-p1.onrender.com/api/blogs'); 
   const { values, handleChange, handleSubmit } = useForm(createPost); 
 
   async function createPost() {
     try {
-      const response = await fetch('http://localhost:8000/api/blogs', {
+      const response = await fetch('https://backend-stw-p1.onrender.com/api/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

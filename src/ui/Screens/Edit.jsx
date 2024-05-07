@@ -16,7 +16,7 @@ const Edit = ({ navigate }) => {
         if (!values.id) {
           return;
         }
-        const response = await fetch(`http://localhost:8000/api/blogs/${values.id}`)
+        const response = await fetch(`https://backend-stw-p1.onrender.com/api/blogs/${values.id}`)
         if (!response.ok) {
           throw new Error('Failed to fetch blog post')
         }
