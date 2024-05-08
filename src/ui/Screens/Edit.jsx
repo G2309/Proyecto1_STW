@@ -80,7 +80,7 @@ const Edit = ({ navigate }) => {
   async function updatePost() {
     try {
       setIsLoading(true)
-      const response = await fetch(`http://localhost:8000/api/blogs/${values.id}`, {
+      const response = await fetch(`https://backend-stw-p1.onrender.com/api/blogs/${values.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
